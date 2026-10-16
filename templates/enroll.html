@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Enroll{% endblock %}
+{% block content %}
+{% include "enroll_content.html" %}
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/enroll.js') }}"></script>{% endblock %}

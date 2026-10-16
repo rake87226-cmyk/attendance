@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Admin login{% endblock %}
+{% block content %}
+<section class="panel login-panel">
+  <h1>Admin login</h1>
+  {% if not configured %}
+    <p class="status bad">Admin access is disabled. Set the ADMIN_PASSWORD environment variable and restart the server.</p>
+  {% else %}
+    <p>Sign in to enroll students and view attendance reports.</p>
+    {% if error %}<p class="status bad">{{ error }}</p>{% endif %}
+    <form action="{{ url_for('admin_login') }}" method="post">
+      <label for="password">Admin password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <button class="btn primary" type="submit">Sign in</button>
+    </form>
+  {% endif %}
+</section>
+{% endblock %}

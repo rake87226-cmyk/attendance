@@ -1,0 +1,12 @@
+# Python environments and generated files
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Local data and environment secrets
+attendance.db
+attendance.db-*
+.env
+.env.*
+!.env.example

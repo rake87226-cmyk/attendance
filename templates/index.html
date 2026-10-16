@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>RFID + Face Attendance</h1>
+<p>Tap a card on the reader. The laptop webcam opens and verifies the face before attendance is recorded.</p>
+<div class="cards">
+  <a class="card" href="/attendance"><h3>Attendance</h3><p>Connect the reader and record attendance.</p></a>
+  <a class="card" href="/admin"><h3>Admin</h3><p>Enroll students and view or export reports.</p></a>
+</div>
+{% endblock %}

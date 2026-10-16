@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Admin{% endblock %}
+{% block content %}
+<h1>Admin dashboard</h1>
+<p>Choose an admin task.</p>
+<div class="cards">
+  <a class="card" href="{{ url_for('admin_enroll_page') }}">
+    <h3>Enroll</h3>
+    <p>Register students and manage enrolled students.</p>
+  </a>
+  <a class="card" href="{{ url_for('admin_reports_page') }}">
+    <h3>Reports</h3>
+    <p>View and export attendance records.</p>
+  </a>
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Report{% endblock %}
+{% block content %}
+{% include "report_content.html" %}
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/report.js') }}"></script>{% endblock %}

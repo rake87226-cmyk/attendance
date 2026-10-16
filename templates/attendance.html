@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Attendance{% endblock %}
+{% block content %}
+<h1>Take attendance</h1>
+<div class="grid">
+  <section class="panel">
+    <button id="btnReader" class="btn primary">Connect RFID reader</button>
+    <span id="readerState" class="muted">Not connected</span>
+    <p class="muted">Daily check-ins: 9:00 - 9:15 AM, 1:15 - 1:30 PM, and one flexible scan from 2:00 - 5:00 PM.</p>
+    <label class="check"><input id="liveness" type="checkbox" checked> Require blink (liveness check)</label>
+    <div id="status" class="status info big">Loading face models...</div>
+    <h3>Recent scans</h3>
+    <ul id="log" class="log"></ul>
+  </section>
+  <section class="panel">
+    <div class="video-wrap"><video id="video" autoplay muted playsinline></video>
+      <div id="idle" class="idle">Camera opens after a card is tapped</div></div>
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/attendance.js') }}"></script>{% endblock %}

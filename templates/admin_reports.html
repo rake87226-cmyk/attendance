@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Admin - Reports{% endblock %}
+{% block content %}
+<p><a href="{{ url_for('admin_page') }}">← Admin dashboard</a></p>
+{% include "report_content.html" %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/report.js') }}"></script>
+{% endblock %}

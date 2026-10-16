@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Smart Attendance{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <nav>
+    <a class="brand" href="/">Smart Attendance</a>
+    {% if session.get("is_admin") %}
+      <a href="/admin">Admin</a>
+      <form action="/admin/logout" method="post" class="nav-form">
+        <button type="submit" class="nav-button">Log out</button>
+      </form>
+    {% else %}
+      <a href="/attendance">Attendance</a>
+      <a href="/admin/login">Admin</a>
+    {% endif %}
+  </nav>
+  <main>{% block content %}{% endblock %}</main>
+  <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.12/dist/face-api.js"></script>
+  <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

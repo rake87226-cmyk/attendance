@@ -1,0 +1,27 @@
+<section id="enroll">
+  <h1>Enroll student</h1>
+  <div class="grid">
+    <section class="panel">
+      <button id="btnReader" class="btn">Connect RFID reader</button>
+      <span id="readerState" class="muted">Not connected</span>
+
+      <label>Name <input id="name" type="text"></label>
+      <label>Roll number <input id="roll" type="text"></label>
+      <label>Card UID (tap card, or type)<input id="uid" type="text"></label>
+
+      <div class="row">
+        <button id="btnCam" class="btn">Start camera</button>
+        <button id="btnCapture" class="btn" disabled>Capture face (0/3)</button>
+      </div>
+      <button id="btnSave" class="btn primary" disabled>Save student</button>
+      <p id="msg" class="status info">Loading face models...</p>
+    </section>
+    <section class="panel">
+      <div class="video-wrap"><video id="video" autoplay muted playsinline></video></div>
+      <p class="muted">Capture 3 samples: face the camera, then slightly turn left and right.</p>
+    </section>
+  </div>
+
+  <h2>Enrolled students</h2>
+  <table id="studentsTable"><thead><tr><th>Name</th><th>Roll</th><th>Card UID</th><th></th></tr></thead><tbody></tbody></table>
+</section>
